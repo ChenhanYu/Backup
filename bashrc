@@ -41,6 +41,13 @@ alias pine='alpine -passfile ~/.pinepass'
 
 ## My customizations 
 
+## My Macbook Setup
+if [[ $(hostname) =~ .*Chenhans.* ]]; then
+  export CLICOLOR=1
+  export LSCOLORS=GxFxCxDxBxegedabagaced
+fi
+
+
 ## Ronaldo Setup
 if [[ $(hostname) =~ .*ronaldo.* ]]; then
   echo $(hostname)
@@ -50,6 +57,7 @@ if [[ $(hostname) =~ .*ronaldo.* ]]; then
   module load matlab
   module list
 
+  export LSCOLORS=GxFxCxDxBxegedabagaced
   alias lafmm='cd /h1/chenhan/Projects/bill/lafmm/treecode'
   alias knn='cd /h1/chenhan/Projects/knn'
 fi
@@ -61,6 +69,7 @@ if [[ $(hostname) =~ .*stampede.* ]]; then
   module load fftw3
   module load cuda
 
+  export LSCOLORS=GxFxCxDxBxegedabagaced
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 32 --pty /bin/bash -l'
 fi
 
@@ -70,6 +79,7 @@ if [[ $(hostname) =~ .*maverick.* ]]; then
   echo $(hostname)
   module load cuda
 
+  export LSCOLORS=GxFxCxDxBxegedabagaced
   alias askit='cd /home/02794/ych/Projects/askit/treecode'
   alias gnf='cd /home/02794/ych/Projects/GNF'
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'

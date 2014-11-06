@@ -61,7 +61,7 @@ if [[ $(hostname) =~ .*stampede.* ]]; then
   module load fftw3
   module load cuda
 
-  alias gpu='srun -p gpu -t 1:00:00 -n 32 --pty /bin/bash -l'
+  alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 32 --pty /bin/bash -l'
 fi
 
 
@@ -72,7 +72,7 @@ if [[ $(hostname) =~ .*maverick.* ]]; then
 
   alias askit='cd /home/02794/ych/Projects/askit/treecode'
   alias gnf='cd /home/02794/ych/Projects/GNF'
-  alias gpu='srun -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
+  alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
 fi
 
 

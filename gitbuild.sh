@@ -23,6 +23,8 @@ git config --global core.excludesfile ./.gitignore_global
 
 git config -l
 
+cp gitignore_global ~/.gitignore_global
+
 ##---------------------
 ## Manually modify
 ##---------------------

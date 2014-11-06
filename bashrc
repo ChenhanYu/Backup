@@ -42,7 +42,7 @@ alias pine='alpine -passfile ~/.pinepass'
 ## My customizations 
 
 ## Ronaldo Setup
-if [ $(hostname) = "ronaldo.ices.utexas.edu" ]; then
+if [[ $(hostname) =~ .*ronaldo.* ]]; then
   echo $(hostname)
   module load intel
   module load mkl
@@ -56,8 +56,8 @@ fi
 
 
 ## Stampede Setup
-if [ 'hostname -d' = "stampede.tacc.utexas.edu" ]; then
-  echo hostname
+if [[ $(hostname) =~ .*stampede.* ]]; then
+  echo $(hostname)
   module load fftw3
   module load cuda
 
@@ -66,8 +66,8 @@ fi
 
 
 ## Maverick Setup
-if [ 'hostname -d' = "maverick.tacc.utexas.edu" ]; then
-  echo hostname
+if [[ $(hostname) =~ .*maverick.* ]]; then
+  echo $(hostname)
   module load cuda
 
   alias askit='cd /home/02794/ych/Projects/askit/treecode'

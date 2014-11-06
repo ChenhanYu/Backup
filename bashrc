@@ -39,8 +39,9 @@ alias pine='alpine -passfile ~/.pinepass'
 
 
 
-# add your customizations below
+## My customizations 
 
+## Ronaldo Setup
 if [ $(hostname) = "ronaldo.ices.utexas.edu" ]; then
   echo $(hostname)
   module load intel
@@ -53,42 +54,20 @@ if [ $(hostname) = "ronaldo.ices.utexas.edu" ]; then
   alias knn='cd /h1/chenhan/Projects/knn'
 fi
 
+
+## Stampede Setup
 if [ 'hostname -d' = "stampede.tacc.utexas.edu" ]; then
   echo hostname
   module load fftw3
   module load cuda
 
-  alias interact="srun -p gpu -t 1:00:00 -n 32 --pty /bin/bash -l"
+  alias gpu="srun -p gpu -t 1:00:00 -n 32 --pty /bin/bash -l"
 fi
 
 
-if [ $(hostname) = "accelerando.math.ntu.edu.tw" ]; then
-  echo $(hostname)
-
-  source /opt/intel/bin/compilervars.sh intel64
-  PATH=$PATH:/opt/openmpi-1.6.5-intel/bin
-  PATH=$PATH:/opt/NVIDIA/cuda/bin:/opt/intel/bin
-  PATH=$PATH:$HOME/bin
-  PATH=$PATH:$HOME/texlive/2012/bin/x86_64-linux
-  PATH=$PATH:/opt/scitools/bin/linux64
-  export PATH
-  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:$HOME/lib
-  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/NVIDIA/cuda-5.5/lib64
-  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/openmpi-1.6.5-intel/lib
-  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/hwloc-1.1/lib
-  export LD_LIBRARY_PATH
-  MANPATH=/opt/openmpi-1.6.5-intel/share/man:$MANPATH
-  export MANPATH
-  PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/lib/pkgconfig
-  export PKG_CONFIG_PATH
-  export MKL_MIC_ENABLE=1
-  export MKL_MIC_WORKDIVISION=1.0
-
-fi
 
 
 ## Git command line display
-
 function git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
   echo "("${ref#refs/heads/}") ";

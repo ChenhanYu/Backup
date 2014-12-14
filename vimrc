@@ -15,10 +15,10 @@ set ruler
 set number
 
 "" Use 4 white space for <tab>
-set tabstop=4
+set tabstop=2
 
-"" Do not replace the <tab>, since makefile will need it
-"set expandtab
+"" Replace the <tab>
+set expandtab
 
 "" Setup C/C++ autoindent
 set cindent

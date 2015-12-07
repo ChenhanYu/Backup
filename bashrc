@@ -36,17 +36,18 @@ alias alpine='alpine -passfile ~/.pinepass'
 alias pine='alpine -passfile ~/.pinepass'
 
 
-
-
-
 ## My customizations 
 
-## My Macbook Setup
-if [[ $(hostname) =~ .*Chenhans.* ]]; then
+#if [[ $(hostname) =~ .*Chenhan.* ]]; then
+  echo $(hostname)
   export CLICOLOR=1
   export LSCOLORS=GxFxCxDxBxegedabagaced
-fi
-
+  export PATH=$PATH:/usr/local/bin:/opt/intel/bin:/Applications/MATLAB_R2014b.app/bin:/Library/TeX/texbin/
+  export DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:/opt/intel/lib:/opt/intel/mkl/lib
+  echo 'PATH='$PATH
+  alias ks='cd ~/Documents/Projects/ks'
+  alias rnn='cd ~/Documents/Projects/rnn'
+#fi
 
 ## Ronaldo Setup
 if [[ $(hostname) =~ .*ronaldo.* ]]; then
@@ -77,8 +78,13 @@ if [[ $(hostname) =~ .*maverick.* ]]; then
   echo $(hostname)
   module load cuda
 
+  export CLICOLOR=1
+  export LSCOLORS=GxFxCxDxBxegedabagaced
+
   alias askit='cd /home/02794/ych/Projects/askit/treecode'
   alias gnf='cd /home/02794/ych/Projects/GNF'
+  alias rnn='cd /home/02794/ych/Projects/rnn'
+  alias ks='cd /home/02794/ych/Projects/ks'
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
 fi
 
@@ -113,6 +119,6 @@ alias rm='rm -i'
 alias ..='cd ..'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias du='du -kh'
-alias ls='ls -h --color'
+#alias ls='ls -h --color'
 alias h='history'
 alias j='jobs -l'

@@ -15,10 +15,10 @@ set ruler
 set number
 
 "" Use 4 white space for <tab>
-set tabstop=2
+set tabstop=4
 
 "" Replace the <tab>
-set expandtab
+"set expandtab
 
 "" Setup C/C++ autoindent
 set cindent
@@ -92,6 +92,7 @@ let Tlist_Auto_Open=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Use_Right_Window=1
 let Tlist_Use_SingleClick=1
+"let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 
 
 "" Nerdtree
